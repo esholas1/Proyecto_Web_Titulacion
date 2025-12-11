@@ -1,0 +1,106 @@
+(Por si se me olvida como levantar el backend)
+
+PROGRAMAS NECESARIOS
+-----------------------
+
+Node.js
+Docker Desktop (por ahora para testear)
+Git
+
+--------------------------------------------------------------
+
+DEPENDENCIAS BACKEND
+---------------------------
+
+Desde la carpeta raíz ejecutar:
+
+cd backend
+npm install
+
+Para instalar las librerías usadas:
+- express
+- prisma
+- @prisma/client
+- bcrypt
+- jsonwebtoken
+- cors
+- dotenv
+- ts-node-dev
+- typescript
+- @types/*
+
+--------------------------------------------------------------
+
+VARIABLES DE ENTORNO
+-----------------------
+
+Archivo .env:
+
+DATABASE_URL="postgresql://admin:admin123@localhost:5432/practicasdb?schema=public"
+OPENAI_API_KEY=""
+PORT=3000
+JWT_SECRET=testtesttest123
+
+--------------------------------------------------------------
+
+4. BASE DE DATOS (POSTGRESQL + PGADMIN)
+---------------------------------------
+
+Se levanta con Docker.
+
+Desde la raíz ejecutar:
+
+docker compose up -d
+
+Levanta:
+- PostgreSQL (localhost:5432)
+- pgAdmin: http://localhost:5050 (usuario: admin@admin.com / contraseña: admin123)
+
+--------------------------------------------------------------
+
+5. PRISMA (ORM)
+---------------
+Antes de iniciar backend:
+
+cd backend
+npx prisma generate
+npx prisma migrate dev --name init
+npx prisma studio
+Abrirá: http://localhost:5555
+
+--------------------------------------------------------------
+LEVANTAR BACKEND
+----------------------
+
+En /backend hacer:
+
+npm run dev
+http://localhost:3000/
+
+Rutas test:
+- GET /api/health
+- GET /api/test-db
+
+--------------------------------------------------------------
+LEVANTAR FRONTEND
+-------------------------------------------
+
+Aún pediente
+- React con Vite + Ant Design
+
+Cuando exista /frontend, se usará:
+
+cd frontend
+npm install
+npm run dev
+
+--------------------------------------------------------------
+PUERTOS USADOS 
+---------------------------------
+
+Backend: 3000
+PostgreSQL (Docker): 5432
+pgAdmin (Docker): 5050
+Prisma Studio: 5555
+
+--------------------------------------------------------------
