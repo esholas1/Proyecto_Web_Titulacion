@@ -61,6 +61,7 @@ npm install -D typescript ts-node-dev
 npm install -D @types/node @types/express @types/cors
 npm install -D @types/jsonwebtoken @types/bcrypt
 npm install -D @types/multer
+npx prisma init
 npx prisma generate
 npx prisma migrate dev --name init
 npx prisma studio

@@ -24,7 +24,7 @@ export default function Login() {
         return;
       }
 
-      // Guardar token
+      // Guarda token
       localStorage.setItem("token", data.token);
 
       alert("Login correcto");
