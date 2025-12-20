@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.routes";
 import postulantePerfilRoutes from "./routes/postulantePerfil.routes";
+import jobRoutes from './routes/jobs.routes';
+
 
 dotenv.config();
 
@@ -12,11 +14,15 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/postulante/perfil", postulantePerfilRoutes);
-
+app.use('/api/jobs', jobRoutes);
+app.use('/api/applications', require('./routes/aplications.routes').default);
+app.use('/api/recruiter', require('./routes/recruiter.routes').default);
+app.use('/api/postulante', require('./routes/postulante.routes').default);
+app.use('/api/categories', require('./routes/categories.routes').default);
 
 //Test
 app.get("/api/health", (_req, res) => {
-  res.json({ ok: true, message: "API funcionando" });
+  res.json({ ok: true, message: "API funcionando correctamente" });
 });
 
 import prisma from "./config/prisma";

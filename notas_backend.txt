@@ -25,7 +25,8 @@ Para instalar las librerías usadas:
 - dotenv
 - ts-node-dev
 - typescript
-- @types/*
+- @types
+
 
 VARIABLES DE ENTORNO
 -----------------------

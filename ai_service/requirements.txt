@@ -1,0 +1,12 @@
+Librerias necesarias para el servicio AI
+
+1.-fastapi
+2.-uvicorn
+3.-scikit-learn
+4.-numpy
+5.-pydantic
+
+Ejecutar el servicio de IA: 
+
+cd ai_service
+uvicorn main:app --reload --port 8000
